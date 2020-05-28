@@ -10,9 +10,10 @@ Bindings for the Qt5 Framework using [bindgen](https://github.com/Papierkorb/bin
 
 # Installation
 
-If you just want to develop a Qt5-based Crystal app, use the `master-ready-to-use`
+If you just want to develop a Crystal app which uses Qt5, use the `master-ready-to-use`
 branch. It contains pre-built/pre-generated bindings for certain platform and Qt
-combinations. In that case, you won't need bindgen at all.
+combinations. If that branch contains the pre-generated bindings for your platform,
+you won't need bindgen at all.
 
 ```yaml
 dependencies:
@@ -21,7 +22,7 @@ dependencies:
     branch: master-ready-to-use
 ```
 
-If you want the bindings to be generated for the current system or if you want
+If you want the bindings to be generated for the current system, or if you want
 to generate bindings for new platform and Qt combinations, use the master
 branch:
 
@@ -29,7 +30,7 @@ branch:
 dependencies:
   qt5:
     github: Papierkorb/qt5.cr
-		branch: master
+    branch: master
 ```
 
 In any case, your users will be required to have the Qt5 libraries on their system
@@ -82,9 +83,13 @@ checkout master` instead of modifying `shard.yml`.
 ### Naming scheme
 
 As `qt5.cr` supports many different versions of Qt on different platforms,
-generated bindings follow a naming scheme.  The scheme is as follows:
+generated bindings follow a naming scheme.  The scheme contains 4 components
+as follows:
 
-* `KERNEL-LIB_C-ARCH-qtVERSION`, e.g. `linux-gnu-x86_64-qt5.13`
+`KERNEL - LIB_C - ARCH - qtVERSION`, e.g. `linux-gnu-x86_64-qt5.13`
+
+Where:
+
 * `KERNEL` is the OS kernel, e.g. `linux`, `darwin`, `windows`
 * `LIB_C` is the lib C name, e.g. `gnu`, `musl`, `win32`
 * `ARCH` is the architecture, e.g. `i686`, `x86_64`, `arm`

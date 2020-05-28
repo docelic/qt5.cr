@@ -109,10 +109,10 @@ to generate the bindings
 3. Run `crystal support/generate_bindings.cr`
 4. Commit the files in `ext/` to the `master-ready-to-use` branch
 
-The script will automatically download, unpack, build and generate all
-configured versions of Qt.  It'll store the Qt5 versions in a directory called
-`download_cache/`.  Subsequent invocations of that script will use these cached
-assets.
+The build process will automatically download, unpack, build, and generate all
+configured versions of Qt5.  It'll store the downloaded and unpacked Qt5 versions
+to directory called `download_cache/`.
+Subsequent invocations of that script will use these cached assets.
 
 **The first run may take a long time, and each version of Qt5 will take up about
 4GB of disk space**.

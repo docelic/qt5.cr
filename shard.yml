@@ -9,8 +9,7 @@ crystal: 0.27.0
 
 dependencies:
   bindgen:
-    github: Papierkorb/bindgen
-    branch: master
+    path: ../bindgen
 
 scripts:
   postinstall: shards
